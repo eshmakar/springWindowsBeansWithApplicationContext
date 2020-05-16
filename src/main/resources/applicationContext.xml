@@ -10,7 +10,7 @@
     <bean id="houseBean"
           class="House">
         <constructor-arg ref="windowBean"/>  <!--передаем в качестве параметра конструктора вышесозданный бин-->
-        <property name="height" value="2"/> <!--высота указывается через property-->
+        <property name="height" value="2"/> <!--высота указывается через setter в property-->
     </bean>
 
 
