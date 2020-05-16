@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="windowBean"
+          class="WoodFrameWindow">
+    </bean>
+
+    <bean id="houseBean"
+          class="House">
+        <constructor-arg ref="windowBean"/>  <!--передаем в качестве первого параметра конструктора вышесозданный бин-->
+        <constructor-arg value="3"/> <!-- высота дома-->
+    </bean>
+
+
+</beans>
