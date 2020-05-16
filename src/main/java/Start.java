@@ -6,6 +6,6 @@ public class Start {
 
         House house = context.getBean("houseBean", House.class);
         house.view();
-        System.out.printf("House height: %d", house.getHeight());
+        System.out.printf("House height: %d\n", house.getHeight());
     }
 }
