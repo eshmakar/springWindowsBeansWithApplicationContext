@@ -2,15 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="brickBean"
+          class="Brick"/>
+    <bean id="logs Bean"
+          class="Wood"/>
 
     <bean id="windowBean"
-          class="WoodFrameWindow">
-    </bean>
+          class="PlasticWindow"/>
 
     <bean id="houseBean"
           class="House">
         <constructor-arg ref="windowBean"/>  <!--передаем в качестве параметра конструктора вышесозданный бин-->
         <property name="height" value="2"/> <!--высота указывается через setter в property-->
+        <property name="wall" ref="logs Bean"/>
     </bean>
 
 

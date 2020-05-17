@@ -5,7 +5,8 @@ public class Start {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         House house = context.getBean("houseBean", House.class);
+        house.buildWall();
         house.view();
-        System.out.printf("House height: %d\n", house.getHeight());
+        System.out.printf("Кол-во этажей: %d\n", house.getHeight());
     }
 }
