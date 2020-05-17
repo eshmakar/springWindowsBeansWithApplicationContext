@@ -8,5 +8,10 @@ public class Start {
         house.buildWall();
         house.view();
         System.out.printf("Кол-во этажей: %d\n", house.getHeight());
+
+        MainWindow window = context.getBean("mainWindowBean", MainWindow.class);
+        window.show();
+
+        context.close();
     }
 }
