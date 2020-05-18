@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
 
 
     <!--с помощью инит метода можно вызвать любой метод который находится в этом классе -->
@@ -17,18 +17,29 @@
     />
 
     <bean id="brickBean"
-          class="Brick"/>
+          class="Brick"
+          scope="prototype"
+    />
     <bean id="logs Bean"
-          class="Wood"/>
+          class="Wood"
+          scope="prototype"
+    />
 
     <bean id="windowBean"
           class="PlasticWindow"
     />
 
     <bean id="houseBean"
-          class="House">
-        <constructor-arg ref="windowBean"/>  <!--передаем в качестве параметра конструктора вышесозданный бин-->
-        <property name="height" value="2"/> <!--высота указывается через setter в property-->
+          class="House"
+          p:height="2">
+<!--        в качестве параметра можно указать вот так-->
+
+
+
+        <!--передаем в качестве параметра конструктора вышесозданный бин-->
+        <constructor-arg ref="windowBean"
+        />
+        <!--        <property name="height" value="2"/>  высота указывается через setter в property;-->
         <property name="wall" ref="logs Bean"/>
     </bean>
 

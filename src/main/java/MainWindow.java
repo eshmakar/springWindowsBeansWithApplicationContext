@@ -3,6 +3,8 @@ import org.springframework.beans.factory.InitializingBean;
 
 //это Singleton
 public class MainWindow implements InitializingBean, DisposableBean {
+
+
     private MainWindow() {} //приватный конструктор, чтобы другие классы не смогли создать объект этого класса
 
     public void destroy() throws Exception { //это метод интерфейса DisposableBean
