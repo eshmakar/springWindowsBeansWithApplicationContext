@@ -54,10 +54,14 @@
         <!--        <property name="height" value="2"/>  высота указывается через setter в property;-->
         <property name="wall" ref="logs Bean"/>
         <property name="doors">
-            <list>
+           <!-- <list>
                 <ref bean="outDoor"/>
                 <ref bean="innerDoor"/>
-            </list>
+            </list>-->
+            <map>
+                <entry key="A" value-ref="outDoor"/>
+                <entry key="B" value-ref="innerDoor"/>
+            </map>
         </property>
     </bean>
 
