@@ -2,11 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <!--с помощью инит метода можно вызвать любой метод который находится в этом классе -->
+    <!--инит метод всегда срабатывает первым-->
+    <!--дестрой метод всегда срабатывает последним-->
     <bean id="mainWindowBean"
           class="MainWindow"
+          destroy-method="closeConnection"
           factory-method="getInstance"
-          init-method="connection" /> <!--с помощью инит метода можно вызвать любой метод который находится в этом классе -->
+          init-method="openConnection"
 
+    />
 
     <bean id="brickBean"
           class="Brick"/>
@@ -23,6 +31,5 @@
         <property name="height" value="2"/> <!--высота указывается через setter в property-->
         <property name="wall" ref="logs Bean"/>
     </bean>
-
 
 </beans>
