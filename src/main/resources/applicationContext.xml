@@ -5,8 +5,8 @@
     <bean id="mainWindowBean"
           class="MainWindow"
           factory-method="getInstance"
+          init-method="connection" /> <!--с помощью инит метода можно вызвать любой метод который находится в этом классе -->
 
-    />
 
     <bean id="brickBean"
           class="Brick"/>
@@ -14,7 +14,8 @@
           class="Wood"/>
 
     <bean id="windowBean"
-          class="PlasticWindow"/>
+          class="PlasticWindow"
+    />
 
     <bean id="houseBean"
           class="House">

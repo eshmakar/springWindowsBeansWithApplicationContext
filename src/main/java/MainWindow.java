@@ -13,4 +13,8 @@ public class MainWindow {
     public void show() {
         System.out.println("Show main window");
     }
+
+    public void connection(){
+        System.out.println("Main window connection");
+    }
 }
