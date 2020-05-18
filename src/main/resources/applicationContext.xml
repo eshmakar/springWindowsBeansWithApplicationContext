@@ -5,6 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+
     <!--с помощью инит метода можно вызвать любой метод который находится в этом классе -->
     <!--инит метод всегда срабатывает первым-->
     <!--дестрой метод всегда срабатывает последним-->
@@ -15,6 +16,17 @@
           init-method="openConnection"
 
     />
+    <bean id="outDoor"
+          class="MetalDoor"></bean>
+
+
+
+    <bean id="innerDoor"
+          class="WoodDoor"
+          scope="prototype"
+    ></bean>
+    <!--    так как внутренние двери могут быть несколько-->
+
 
     <bean id="brickBean"
           class="Brick"
@@ -31,9 +43,9 @@
 
     <bean id="houseBean"
           class="House"
-          p:height="2">
-<!--        в качестве параметра можно указать вот так-->
-
+          p:height="2"
+    >
+        <!--        в качестве параметра можно указать вот так-->
 
 
         <!--передаем в качестве параметра конструктора вышесозданный бин-->
@@ -41,6 +53,12 @@
         />
         <!--        <property name="height" value="2"/>  высота указывается через setter в property;-->
         <property name="wall" ref="logs Bean"/>
+        <property name="doors">
+            <list>
+                <ref bean="outDoor"/>
+                <ref bean="innerDoor"/>
+            </list>
+        </property>
     </bean>
 
 </beans>

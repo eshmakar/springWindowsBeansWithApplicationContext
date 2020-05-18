@@ -1,7 +1,18 @@
+import java.util.Collection;
+
 public class House {
     private Window window;
     private int height;
     private Material wall;
+    private Collection<Door> doors; //создаем коллекцию
+
+    public Collection<Door> getDoors() {
+        return doors;
+    }
+
+    public void setDoors(Collection<Door> doors) {
+        this.doors = doors;
+    }
 
     public void buildWall(){
         for (int i = 0; i <getHeight(); i++) {
@@ -40,5 +51,11 @@ public class House {
 
     public void view(){
         window.open();
+    }
+
+    public void installDoors(){
+        for (Door door: doors){
+            door.install();
+        }
     }
 }

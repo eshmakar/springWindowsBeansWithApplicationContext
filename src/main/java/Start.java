@@ -6,6 +6,7 @@ public class Start {
 
         House house = context.getBean("houseBean", House.class);
         house.buildWall();
+        house.installDoors();
         house.view();
         System.out.printf("Кол-во этажей: %d\n", house.getHeight());
 
